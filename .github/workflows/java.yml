@@ -35,13 +35,13 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run Java single compile
         run: |
-          javac -Dfile.encoding=UTF-8 "./helloworld.java"
+          javac -encoding UTF-8 "./helloworld.java"
           jar -cvf HelloWorld.jar helloworld.class
 
       # Runs a set of commands using the runners shell
       - name: Run generated JAR file
         run: |
-          java -cp Helloworld.jar helloworld
+          java "-Dfile.encoding=UTF-8" -cp Helloworld.jar helloworld
           
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2.2.4
