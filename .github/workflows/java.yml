@@ -36,7 +36,7 @@ jobs:
       - name: Run Java single compile
         run: |
           javac -encoding UTF-8 "./Hello.java"
-          jar -cvf Hello.jar Hello.class
+          jar -cvf Hello.jar *.class
 
       # Runs a set of commands using the runners shell
       - name: Run generated JAR file
